@@ -1,0 +1,402 @@
+/* ========================================= */
+/* 1. CSS VARIABLES / ROOT (Kung ginagamit mo, dapat nandito) */
+/* ========================================= */
+:root {
+    --main-gradient: radial-gradient(circle at center, #dbffc1, #6d9f8c);
+    --text-dark: #333;
+    --text-light: #ffffff;
+    --button-hover: #4CAF50;
+    --shadow-light: rgba(0, 0, 0, 0.8);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+    --card-bg: #fdfdfd;
+    --border-light: #C0C0C0;
+    --button-gradient: linear-gradient(180deg, #93da97, #00665b);
+}
+
+/* ========================================= */
+/* 2. GLOBAL / BASE STYLES                   */
+/* ========================================= */
+html{
+    height: 100vh;
+}
+
+/* General Body and Font Setup */
+body {
+    /* 💥 FIX: Ginawa nating Poppins para maging pareho sa main.css */
+    font-family: 'Poppins', sans-serif; 
+    
+    background-color: #f4fdd3;
+    margin: 0; 
+    
+    /* FIX 4: ITO ANG GAGAWING ANTI-OVERLAP SPACER. Itutulak ang buong content sa ilalim ng fixed header. */
+    padding-top: 80px; /* Sapat na padding base sa maliit na header height. */
+    padding-bottom: 0; 
+}
+
+
+/* ========================================= */
+/* 3. HEADER & NAVIGATION                    */
+/* ========================================= */
+
+/* Header Wrapper */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: radial-gradient(circle at center, #93da97 0%, #007c6c 100%);
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 0 4px 8px var(--shadow-medium);
+    z-index: 1000;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+/* Header Background: Dark teal gradient (kung ginagamit ito) */
+.header-bg {
+    background-color: #043C3A;
+    background-image: linear-gradient(to right, #007c6c 0%, #93da97 50%, #007c6c);
+}
+
+.header-hidden {
+    transform: translateY(-100px);
+    box-shadow: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.logo h1 {
+    font-size: 1.8em;
+    color: #e8ffd7;
+    font-weight: 700;
+    white-space: nowrap;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.85);
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger-menu span {
+    height: 2px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* NAV SIDEBAR (Final Version) */
+.nav-dropdown {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    z-index: 2000;
+    width: 300px;
+    background: rgba(49, 76, 54, 0.85);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(8px);
+    right: -300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-dropdown.open {
+    transform: translateX(-300px);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-dropdown-inner {
+    padding: 2;
+    color: #f0f0f0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.nav-dropdown-inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-dropdown-inner ul li {
+    margin: 0;
+    border-bottom: 3px solid white;
+}
+
+.nav-dropdown-inner ul li a {
+    display: block;
+    text-decoration: none;
+    color: #f0f0f0;
+    padding: 25px 30px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.2s ease;
+}
+
+.nav-dropdown-inner ul li:first-child a {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.nav-dropdown-inner ul li:first-child a::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    box-shadow: 0 -7px 0 white, 0 7px 0 white;
+}
+
+.nav-dropdown-inner ul li a:hover {
+    background: #007c6c;
+    color: #ffffff;
+}
+
+.nav-dropdown-inner ul li:first-child a:hover {
+    background: #3e5f44;
+    color: #ffffff;
+}
+
+.nav-dropdown-inner ul li:first-child a:hover::before {
+    background: white;
+    box-shadow: 0 -7px 0 white, 0 7px 0 white;
+}
+
+/* Sidebar Navigation - UPDATED STYLES FOR SEMI-TRANSPARENT LOOK */
+.sidebar {
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+    /* Gagamit ng RGBA para sa transparency: Dark Green/Teal na may 85% opacity */
+    background-color: rgba(49, 105, 75, 0.85); 
+    box-shadow: 0 15px rgba(0, 0, 0, 0.5);
+    padding: 0;
+}
+.sidebar.open {
+    transform: translateX(0);
+}
+
+
+/* Menu Item Styling */
+.menu-item {
+    color: #C8E4A7; /* Light text color */
+    border-bottom: 2px solid rgba(200, 228, 167, 0.5); /* Light green separator */
+    transition: background-color 0.2s;
+    
+    /* ADJUSTMENT 10: Pinaliit pa ang padding ng menu item */
+    padding: 0.6rem 0.9rem; 
+    
+    /* ADJUSTMENT 11: Pinaliit ang font size */
+    font-size: 0.9rem; 
+    
+    font-weight: 600; 
+    display: flex;
+    align-items: center;
+}
+
+
+.menu-item:hover {
+    background-color: rgba(8, 85, 81, 0.9); 
+}
+
+
+/* ========================================= */
+/* 4. DASHBOARD SECTIONS & COMPONENTS        */
+/* ========================================= */
+
+/* Main Data Gradient: Table at main container */
+.main-gradient-bg {
+    background:linear-gradient(to right, #007c6c 0%, #93da97 50%, #007c6c);
+    position: relative;
+    overflow: hidden;
+    
+    /* FIX: Inalis ang padding-top para ang body padding ang magdala ng clearance. */
+    padding-top: 0; 
+    
+    /* ADJUSTMENT 5: Bawasan ang padding sa baba (Para mas compact) */
+    padding-bottom: 10px; 
+}
+
+
+/* Center glow effect*/
+.main-gradient-bg::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(160, 255, 190, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* 3. KPI Card Gradient (BOXES) */
+/* FIX 6: Paliitin ang content/boxes sa itaas (KPI/RECENT VISITS BOXES) */
+.card-bg {
+    background-color: #00665D;
+    background-image:linear-gradient(to right, #007c6c 0%, #93da97 50%, #007c6c);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    
+    /* Bawasan ang padding sa loob ng boxes para lumiit ang taas at gilid */
+    padding: 10px 15px !important; /* In-override ang p-4 md:p-6 ng Tailwind */
+}
+
+/* FIX 7: Paliitin ang text sa loob ng boxes */
+.card-bg p.text-lg {
+    font-size: 0.9rem; /* Pinaliit ang title text (Total Visits, etc.) */
+    margin-bottom: 0.2rem !important;
+}
+
+.card-bg p.text-5xl {
+    font-size: 2.5rem; /* Pinaliit ang number text (0) */
+}
+
+
+/* 4. Highlight Text: for numbers and table headers */
+.text-clinic-light {
+    color: #f4fdd3; /* Faded light green/yellow */
+}
+
+
+/* Table Grid and Lines (Ito ang contents ng "Recent Clinic Visits" table) */
+.table-grid {
+    border-collapse: collapse;
+}
+.table-grid th, .table-grid td {
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    color: #f4fdd3; 
+    position: relative;
+    z-index: 2;
+    
+    /* ADJUSTMENT 8: Pinaliit pa ang padding ng table cells (Mas compact) */
+    padding: 0.15rem 0.3rem; 
+    
+    /* ADJUSTMENT 9: Pinaliit pa ang font size ng table (Mas compact at professional) */
+    font-size: 0.7rem; 
+}
+
+
+/* ========================================= */
+/* 5. MEDIA QUERIES / RESPONSIVENESS         */
+/* ========================================= */
+@media (max-width: 768px) {
+    .logo h1 {
+        display: none; /* Tinatago ang text logo sa maliit na screen */
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        height: 40px;
+    }
+
+    .nav-dropdown {
+        width: 280px;
+        right: -280px;
+    }
+
+    .nav-dropdown.open {
+        transform: translateX(-280px);
+    }
+}
+
+/* ------------------------------------------- */
+/* ✅ NEW: MODAL/POP-UP STYLES (for login status) */
+/* ------------------------------------------- */
+
+/* Full screen overlay (Nagpapadilim ng background) */
+.modal-overlay {
+    display: none; /* Default: Nakatago */
+    position: fixed;
+    z-index: 3000; /* Dapat mas mataas sa header at sidebar */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark background */
+    display: flex; /* Para i-center ang box */
+    justify-content: center;
+    align-items: center;
+}
+
+/* White Box sa Gitna */
+.modal-content {
+    background-color: #ffffff;
+    margin: auto; 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 400px; 
+    text-align: center;
+    color: var(--text-dark); 
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+/* Message Text */
+#modalMessage {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 10px 0 0 0;
+    color: #007c6c; 
+}
+
+/* Close button (X) */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animation for pop-up */
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.9);}
+    to {opacity: 1; transform: scale(1);}
+}

@@ -1,0 +1,160 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad De Manila Clinic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="log.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="../images/udm.jpeg" alt="UDM Logo">
+                    <h1>Universidad De Manila Clinic</h1>
+                </div>
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+
+            <div id="navDropdown" class="nav-dropdown" aria-hidden="true">
+                <div class="nav-dropdown-inner">
+
+                    <ul>
+                        <li><a href="../index.html">Homepage</a></li>
+                        <li><a href="../about/about.html">About Us</a></li>
+                        <li><a href="../appointment/appointment.html">Appointments</a></li>
+                        <li><a href="../anc/anc.html">Announcements</a></li>
+                        <li><a href="../contacts/contacts.html">Contact Us</a></li>
+                        <li><a href="login.html" id="loginNav">Login</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="clinic-section">
+        <main class="clinic-grid">
+
+            <a href="../gc/gc.html" class="clinic-card">
+                <div class="card-icon">
+                    <img src="../images/1000059474.png" alt="General Consultation">
+                </div>
+                <p>General Consultation</p>
+            </a>
+
+            <a href="../he/he.html" class="clinic-card">
+                <div class="card-icon">
+                    <img src="../images/1000059482.png" alt="Health Education">
+                </div>
+                <p>Health Education</p>
+            </a>
+
+            <a href="../anc/anc.html" class="clinic-card">
+                <div class="card-icon">
+                    <img src="../images/1000059483.png" alt="Announcements">
+                </div>
+                <p>Announcements</p>
+            </a>
+
+            <a href="../dashboard/dashboard.html" class="clinic-card">
+                <div class="card-icon">
+                    <img src="../images/1000059484.png" alt="Dashboard">
+                </div>
+                <p>Dashboard</p>
+            </a>
+
+            <a href="../profile/profile.html" class="clinic-card">
+                <div class="card-icon">
+                    <img src="../images/1000059485.png" alt="Profile">
+                </div>
+                <p>Profile</p>
+            </a>
+
+            <a href="../login/login.html" class="clinic-card">
+                <div class="card-icon">
+                    <img src="../images/1000059486.png" alt="Log Out">
+                </div>
+                <p>Log Out</p>
+            </a>
+        </main>
+    </section>
+
+    <h2 class="advice-title">OUR CLINIC ADVICES! (Para sa'yo, Iskolar!)</h2>
+    <section class="advices-section">
+        <div class="advice-grid">
+
+            <div class="advice-card">
+                <div class="advice-icon-wrapper">
+                    <img class="advice-img" src="../images/water.png" alt="Water Bottle Icon">
+                </div>
+                <div class="advice-content">
+                    <h3>Hydrate to Operate</h3>
+                    <p>Mas klaro mag-isip kapag may enough na tubig sa katawan! Dalahin lagi ang water bottle para hindi
+                        ka ma-drain sa klase. Ang tubig ang best source ng energy para sa utak!</p>
+                </div>
+            </div>
+
+            <div class="advice-card">
+                <div class="advice-icon-wrapper">
+                    <img class="advice-img" src="../images/yo.png" alt="Stretching Person Icon">
+                </div>
+                <div class="advice-content">
+                    <h3>Move a little, Feel Better!</h3>
+                    <p>Kahit short walk lang o stretching sa break! Nakakatulong ito para hindi manghina sa whole day.
+                        Iwas office syndrome at pananakit ng likod at batok.</p>
+                </div>
+            </div>
+
+            <div class="advice-card">
+                <div class="advice-icon-wrapper">
+                    <img class="advice-img" src="../images/2.png" alt="Meditating Person Icon">
+                </div>
+                <div class="advice-content">
+                    <h3>Maging Aware sa Sariling Feelings</h3>
+                    <p>Take a deep breathe at alamin kapag may mabigat kang nararamdaman. Hindi ito weakness, and this
+                        is normal! Huwag matakot mag-seek ng help sa clinic or guidance office.</p>
+                </div>
+            </div>
+
+            <div class="advice-card">
+                <div class="advice-icon-wrapper">
+                    <img class="advice-img" src="../images/hands.png" alt="Washing Hands Icon">
+                </div>
+                <div class="advice-content">
+                    <h3>Practice Safe Habits</h3>
+                    <p>Gumamit ng face mask kapag may outbreak o may sakit na kumakalat. Wash your hands always at
+                        iwasan ang close contact kung may nararamdamang sintomas.</p>
+                </div>
+            </div>
+
+            <div class="advice-card">
+                <div class="advice-icon-wrapper">
+                    <img class="advice-img" src="../images/1.png" alt="Good Posture Icon">
+                </div>
+                <div class="advice-content">
+                    <h3>Focus on Posture!</h3>
+                    <p>While doing school works, do not forget to check on your posture. Hindi nakayuko nang sobra para
+                        hindi ka magkaroon ng back pain later on!</p>
+                </div>
+            </div>
+
+
+            <div id="statusModal" class="modal-overlay">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <p id="modalMessage">You are already logged in!</p>
+                </div>
+            </div>
+
+            <script src="../main/main.js"></script>
+            <script src="../login/login.js"></script>
+            <script src="log.js"></script>
+</body>

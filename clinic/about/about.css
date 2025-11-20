@@ -1,0 +1,21 @@
+.about-us-section {
+    max-width: 900px;
+    margin: 80px auto 50px auto;
+    padding: 30px;
+    background: var(--main-gradient, rgba(0, 124, 108, 0.85));
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #164615;
+}
+
+.about-us-section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.about-us-section p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
