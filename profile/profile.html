@@ -1,0 +1,209 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Student Clinic Profile</title>
+    <link rel="stylesheet" href="profile.css" />
+</head>
+
+<body>
+    <div class="profile-wrapper">
+        <div class="header-with-logo">
+            <img src="../images/udm.jpeg" alt="University Logo" class="udm-logo" />
+            <h2 class="title">UNIVERSIDAD DE MANILA: CLINIC PROFILE</h2>
+        </div>
+        <hr class="divider">
+
+        <h3 class="section-title student-data-title">Student Data:</h3>
+        <div class="student-data-display">
+            <div class="full-width-line">
+                <label>FULL NAME:</label>
+                <input data-key="fullName" type="text" class="info-input editable highlight-field"
+                    placeholder="Surname, Name M.I.">
+            </div>
+
+            <div class="full-width-line">
+                <label>STUDENT ID NUMBER:</label>
+                <input data-key="studentId" type="text" id="studentIdInput" class="info-input editable highlight-field"
+                    placeholder="00-00-000" maxlength="9">
+            </div>
+
+            <div class="full-width-line">
+                <label>COURSE/PROGRAM:</label>
+                <input data-key="course" type="text" class="info-input editable highlight-field" placeholder="Course">
+            </div>
+
+            <div class="full-width-line">
+                <label>SCHOOL YEAR:</label>
+                <input data-key="schoolYear" type="text" id="schoolYearInput"
+                    class="info-input editable highlight-field" placeholder="0000-0000" maxlength="9">
+            </div>
+
+            <div class="full-width-line">
+                <label>YEAR LEVEL:<span class="required-asterisk">*</span></label>
+                <select data-key="yearLevel" id="yearLevelInput" class="info-input editable highlight-field">
+                    <option disabled selected>Select Year Level</option>
+                    <option value="1st Year">1st Year</option>
+                    <option value="2nd Year">2nd Year</option>
+                    <option value="3rd Year">3rd Year</option>
+                    <option value="4th Year">4th Year</option>
+                </select>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="two-col-grid top-gap">
+            <div>
+                <div class="form-row">
+                    <label>Birthday:</label>
+                    <input data-key="birthday" type="date" id="birthdayInput" class="editable-input editable">
+                </div>
+
+                <div class="form-row">
+                    <label>Age:</label>
+                    <input data-key="age" type="text" id="ageOutput" class="editable-input" placeholder="Enter Birthday"
+                        readonly>
+                </div>
+
+                <div class="form-row">
+                    <label>Address:</label>
+                    <input data-key="address" type="text" class="editable-input editable" placeholder="Address">
+                </div>
+
+                <div class="form-row">
+                    <label>Zip Code:</label>
+                    <input data-key="zip" type="text" class="editable-input editable" placeholder="Zip Code">
+                </div>
+
+                <div class="form-row">
+                    <label>Birthplace:</label>
+                    <input data-key="birthplace" type="text" class="editable-input editable" placeholder="Birthplace">
+                </div>
+
+                <div class="form-row">
+                    <label>District #:</label>
+                    <input data-key="district" type="text" class="editable-input editable" placeholder="District">
+                </div>
+
+                <div class="form-row">
+                    <label>Barangay #:</label>
+                    <input data-key="barangay" type="text" class="editable-input editable" placeholder="Barangay">
+                </div>
+
+                <div class="form-row">
+                    <label>Contact #:</label>
+                    <input data-key="cellphone" type="text" class="editable-input editable" placeholder="Contact#">
+                </div>
+            </div>
+
+            <div>
+                <div class="form-row">
+                    <label>Sex:</label>
+                    <select data-key="gender" id="genderInput" class="editable-input editable">
+                        <option disabled selected>Select sex</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Prefer not to say</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label>Blood Type:<span class="required-asterisk">*</span></label>
+                    <select data-key="bloodType" id="bloodTypeInput" class="editable-input editable">
+                        <option disabled selected>Select Blood Type</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <label>Weight (kg):</label>
+                    <input data-key="weight" type="number" id="weightInput" class="editable-input editable"
+                        placeholder="Weight">
+                </div>
+
+                <div class="form-row">
+                    <label>Height (cm):</label>
+                    <input data-key="height" type="number" id="heightInput" class="editable-input editable"
+                        placeholder="Height">
+                </div>
+
+                <div class="form-row">
+                    <label>BMI:</label>
+                    <input data-key="bmi" type="text" id="bmiOutput" class="editable-input" placeholder="Automatic"
+                        readonly>
+                </div>
+
+                <label class="section-label-spacer">Allergies:</label>
+                <div id="allergyTagContainer" class="tag-box"></div>
+
+                <div class="allergy-input-row form-row">
+                    <input data-key="newAllergy" type="text" id="allergyInput" class="tag-input editable"
+                        placeholder="Type allergy">
+                    <button id="addAllergyBtn" class="add-btn">Add</button>
+                </div>
+
+                <div class="form-row">
+                    <label>Conditions:</label>
+                    <input data-key="conditions" type="text" class="editable-input editable"
+                        placeholder="Health condition/s">
+                </div>
+            </div>
+        </div>
+
+        <div class="two-col-grid top-gap">
+            <div>
+                <h3 class="section-title">Emergency Contact</h3>
+
+                <div class="form-row">
+                    <label>Guardian:</label>
+                    <input data-key="guardian" type="text" class="editable-input editable" placeholder="Guardian">
+                </div>
+
+                <div class="form-row">
+                    <label>Contact #:</label>
+                    <input data-key="guardianContact" type="text" class="editable-input editable"
+                        placeholder="Guardian Contact">
+                </div>
+
+                <div class="form-row">
+                    <label>Relationship:</label>
+                    <input data-key="relationship" type="text" class="editable-input editable"
+                        placeholder="Relationship">
+                </div>
+            </div>
+
+            <div>
+                <h3 class="section-title">Health Notes</h3>
+                <textarea data-key="healthNotes" class="editable-textarea editable"
+                    placeholder="Health notes..."></textarea>
+            </div>
+        </div>
+
+        <div id="dayPeriodFields" class="two-col-grid top-gap" style="display:none;">
+            <div class="form-row">
+                <label>Start of Day Period:</label>
+                <input data-key="dayPeriodStart" type="date" class="editable-input editable">
+            </div>
+
+            <div class="form-row">
+                <label>End Date:</label>
+                <input data-key="dayPeriodEnd" type="date" class="editable-input editable">
+            </div>
+        </div>
+
+        <button class="exit-btn" id="exitBtn">Exit Profile</button>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+
+</html>

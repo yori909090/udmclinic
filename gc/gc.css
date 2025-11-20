@@ -1,0 +1,369 @@
+/* ========================================= /
+/ 1. VARIABLES /
+/ ========================================= */
+:root {
+--text-dark: #333;
+--text-light: #ffffff;
+--shadow-medium: rgba(0, 0, 0, 0.1);
+--card-bg: #fdfdfd;
+--border-light: #C0C0C0;
+}
+
+/* ========================================= /
+/ 2. BASE STYLES /
+/ ========================================= */
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+html {
+font-size: 93.75%;
+}
+
+body {
+font-family: 'Poppins', sans-serif;
+line-height: 1.6;
+color: var(--text-dark);
+background: #e8ffd7;
+background-attachment: fixed;
+min-height: 100vh;
+overflow-x: hidden;
+}
+
+.container {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/* ========================================= /
+/ 3. HEADER & NAVIGATION /
+/ ========================================= */
+
+header {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+background: radial-gradient(circle at center, #93da97 0%, #007c6c 100%);
+padding: 10px 20px;
+color: white;
+box-shadow: 0 4px 8px var(--shadow-medium);
+z-index: 1000;
+transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+display: flex;
+align-items: center;
+}
+
+.logo img {
+height: 50px;
+margin-right: 10px;
+border-radius: 50%;
+}
+
+.logo h1 {
+font-size: 1.8em;
+font-weight: 700;
+white-space: nowrap;
+color: #e8ffd7;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.85);
+}
+
+/* HAMBURGER */
+.hamburger-menu {
+display: flex;
+flex-direction: column;
+cursor: pointer;
+padding: 5px;
+}
+
+.hamburger-menu span {
+height: 2px;
+width: 25px;
+background-color: white;
+margin: 4px 0;
+border-radius: 2px;
+transition: all 0.3s ease;
+}
+
+/* NAV DROPDOWN */
+.nav-dropdown {
+position: fixed;
+top: 0;
+height: 100vh;
+width: 300px;
+background: rgba(49, 76, 54, 0.85);
+backdrop-filter: blur(9px);
+right: -300px;
+z-index: 2000;
+transition: transform 0.3s ease-in-out;
+}
+
+.nav-dropdown.open {
+transform: translateX(-300px);
+}
+
+.nav-dropdown-inner ul {
+list-style: none;
+}
+
+.nav-dropdown-inner ul li {
+border-bottom: 3px solid white;
+}
+
+.nav-dropdown-inner ul li a {
+display: block;
+text-decoration: none;
+color: white;
+padding: 25px 30px;
+font-weight: 600;
+}
+
+/* ========================================= /
+/ 4. SCROLLABLE CONTENT /
+/ ========================================= */
+
+/* Clean green background + better spacing */
+.scrollable-content {
+padding: 120px 30px 50px;
+
+/* NEW GREEN GRADIENT */  
+background: #e8ffd7;  
+
+border-radius: 0;
+
+}
+
+/* ========================================= /
+/ 5. SERVICES SECTION /
+/ ========================================= */
+
+.services-grid-wrapper {
+display: flex;
+gap: 40px;
+}
+
+.section-header h3 {
+font-size: 2.5em;
+color: white;
+margin-bottom: 10px;
+font-weight: 700;
+text-shadow: 1px 1px 0 #002D62,
+-1px -1px 0 #002D62,
+1px -1px 0 #002D62,
+-1px 1px 0 #002D62;
+}
+
+.section-header p {
+font-size: 1em;
+color: #00665b;
+text-shadow: none;
+}
+
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+}
+
+/* SERVICE CARDS */
+.service-item {
+background-color: var(--card-bg);
+padding: 15px;
+border-radius: 15px;
+border: 1px solid var(--border-light);
+text-decoration: none;
+color: inherit;
+display: flex;
+flex-direction: column;
+overflow: hidden;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+background-color: rgba(139, 228, 255, 0.209);
+transform: translateY(-5px);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-image-container {
+height: 150px;
+width: 100%;
+overflow: hidden;
+}
+
+.card-image {
+width: 100%;
+height: 100%;
+background-size: cover;
+background-position: center;
+transition: transform 0.5s ease;
+}
+
+.service-item:hover .card-image {
+transform: scale(1.05);
+}
+
+.card-text-content {
+padding: 10px;
+text-align: left;
+}
+
+.card-text-content h4 {
+margin-bottom: 5px;
+font-weight: 700;
+}
+
+.card-text-content p {
+font-size: 0.9em;
+color: #444;
+}
+
+/* ========================================= /
+/ 6. FOOTER /
+/ ========================================= */
+
+footer {
+    background-color: #ffffff;
+    color: #007c6c;
+    text-align: center;
+    padding: 25px 0;      /* was 15px */
+    margin-top: 40px;     /* pushes footer away from content */
+    border-top: 5px solid #007c6c;
+}
+
+footer p {
+    font-size: 0.9em;
+}
+
+/* ========================================= /
+/ 7. MEDIA QUERIES /
+/ ========================================= */
+
+@media (max-width: 992px) {
+.services-grid-wrapper {
+flex-direction: column;
+text-align: center;
+}
+}
+
+@media (max-width: 768px) {
+.logo h1 {
+display: none;
+}
+
+.navbar {  
+    justify-content: center;  
+}  
+
+.scrollable-content {  
+    padding-top: 120px;  
+}
+
+}
+
+@media (max-width: 480px) {
+.card-image-container {
+height: 120px;
+}
+}
+
+/* =============================== /
+/ HOW IT WORKS SECTION /
+/ =============================== */
+
+.how-it-works-section {
+margin-top: 40px;
+}
+
+.how-it-works-section h2,
+.reminders-section h2 {
+font-size: 1.6em;
+margin-bottom: 20px;
+color: #003c2f;
+font-weight: 700;
+}
+
+.how-it-works-section,
+.reminders-section {
+padding-left: 10px;
+padding-right: 10px;
+}
+
+.steps-container {
+display: flex;
+flex-direction: column;
+gap: 18px;
+}
+
+.step-box {
+display: flex;
+align-items: flex-start;
+gap: 15px;
+}
+
+.step-number {
+background: #00905a;
+color: white;
+width: 34px;
+height: 34px;
+border-radius: 8px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: 700;
+font-size: 1.1em;
+}
+
+.step-text h4 {
+font-size: 1.05em;
+font-weight: 700;
+margin-bottom: 3px;
+}
+
+.step-text p {
+font-size: 0.9em;
+color: #333;
+}
+
+/* Buttons */
+/* Fix spacing between buttons and footer */
+.action-buttons {
+    margin-top: 25px;
+    margin-bottom: 50px;   /* ADDED */
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.green-btn {
+background: #00905a;
+color: white;
+padding: 10px 20px;
+border-radius: 8px;
+font-weight: 600;
+text-decoration: none;
+}
+
+.outline-btn {
+background: white;
+color: #00905a;
+border: 2px solid #00905a;
+padding: 10px 20px;
+border-radius: 8px;
+font-weight: 600;
+text-decoration: none;
+}

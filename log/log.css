@@ -1,0 +1,495 @@
+:root {
+    --main-gradient: radial-gradient(circle at center, #dbffc1, #6d9f8c);
+    --text-dark: #333;
+    --text-light: #ffffff;
+    --button-hover: #4CAF50;
+    --shadow-light: rgba(0, 0, 0, 0.8);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+    --card-bg: #fdfdfd;
+    --border-light: #C0C0C0;
+    --button-gradient: linear-gradient(180deg, #93da97, #00665b);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    height: 100vh;
+    width: 100%;
+}
+
+body {
+    background: #fffcd7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: radial-gradient(circle at center, #93da97 0%, #007c6c 100%);
+    padding: 10px 20px;
+    color: white;
+    box-shadow: 0 4px 8px var(--shadow-medium);
+    z-index: 1000;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.header-hidden {
+    transform: translateY(-100px);
+    box-shadow: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.logo h1 {
+    font-size: 1.8em;
+    color: #e8ffd7;
+    font-weight: 700;
+    white-space: nowrap;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.85);
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger-menu span {
+    height: 2px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.nav-dropdown {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    z-index: 2000;
+    width: 300px;
+    background: rgba(49, 76, 54, 0.85);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(8px);
+    right: -300px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-dropdown.open {
+    transform: translateX(-300px);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-dropdown-inner {
+    padding: 2;
+    color: #f0f0f0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.nav-dropdown-inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-dropdown-inner ul li {
+    margin: 0;
+    border-bottom: 3px solid white;
+}
+
+.nav-dropdown-inner ul li a {
+    display: block;
+    text-decoration: none;
+    color: #f0f0f0;
+    padding: 25px 30px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.2s ease;
+}
+
+.nav-dropdown-inner ul li:first-child a {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.nav-dropdown-inner ul li:first-child a::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    box-shadow: 0 -7px 0 white, 0 7px 0 white;
+}
+
+.nav-dropdown-inner ul li a:hover {
+    background: #007c6c;
+    color: #ffffff;
+}
+
+.nav-dropdown-inner ul li:first-child a:hover {
+    background: #3e5f44;
+    color: #ffffff;
+}
+
+.nav-dropdown-inner ul li:first-child a:hover::before {
+    background: white;
+    box-shadow: 0 -7px 0 white, 0 7px 0 white;
+}
+
+.clinic-section {
+    width: 100%;
+    background: radial-gradient(circle, #93da97, #007c6c);
+    padding: 80px 0 40px 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    border-radius: 0;
+}
+
+.clinic-card {
+    background: linear-gradient(to right, #93da97, #007c6c);
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    text-align: left;
+    padding: 20px 25px;
+    transition: 0.3s ease;
+    color: #004c3f;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    height: 100%;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+a.clinic-card {
+    color: inherit;
+}
+
+a.clinic-card:visited,
+a.clinic-card:focus,
+a.clinic-card:active,
+a.clinic-card:hover {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+    border: 2px solid #ffffff;
+}
+
+.clinic-card:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.1);
+}
+
+.card-icon {
+    font-size: 2rem;
+}
+
+.card-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    display: block;
+}
+
+.clinic-card p {
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.clinic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    max-width: 800px;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.advice-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 40px 0;
+    background: linear-gradient(to right, #1b5e20, #42a5f5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    color: var(--text-dark);
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+#modalMessage {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 10px 0 0 0;
+    color: #007c6c;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.advice-title {
+    text-align: center;
+    color: #004d40;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.advices-section {
+    padding: 0 20px 70px;
+    max-width: 1200px;
+    margin: 60px auto 0;
+    overflow: visible;
+}
+
+.advice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.advice-card {
+    background: radial-gradient(circle at center, #FFDA7A 0%, #f9ffa6 100%);
+    border-radius: 12px;
+    overflow: visible;
+    padding: 50px 20px 20px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid #6a7b5f;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.advice-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.advice-icon-wrapper {
+    position: relative;
+    float: left;
+    margin-right: 20px;
+    margin-top: -22px;
+    margin-left: -5px;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: none;
+    box-shadow: 0 2px 8px rgba(252, 255, 75, 0.3);
+}
+
+.advice-icon-wrapper .advice-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.advice-content h3 {
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow:
+        1px 1px 0 #002D62,
+        -1px -1px 0 #002D62,
+        1px -1px 0 #002D62,
+        -1px 1px 0 #002D62,
+        0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.advice-content p {
+    color: #333;
+    line-height: 1.5;
+    font-size: 1em;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.advice-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.advice-header .icon {
+    font-size: 1.8em;
+    margin-right: 10px;
+}
+
+.advice-card p {
+    color: #333;
+    line-height: 1.5;
+    font-size: 0.95em;
+}
+
+.advice-title {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.advice-title.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    .advice-title {
+        font-size: 1.5em;
+    }
+
+    .advice-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .logo h1 {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .clinic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .clinic-card {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        height: 40px;
+    }
+
+    .nav-dropdown {
+        width: 280px;
+        right: -280px;
+    }
+
+    .nav-dropdown.open {
+        transform: translateX(-280px);
+    }
+}

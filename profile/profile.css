@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #ececec;
+    padding: 20px;
+}
+
+.profile-wrapper {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 0px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 3px solid #71899c;
+}
+
+/* header */
+.title {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.divider {
+    border: none;
+    height: 3px;
+    background-color: #71899c;
+    margin: 15px -25px 25px -25px;
+}
+
+.student-data-title {
+    font-size: 1rem;
+    color: #2d56ff !important;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: 1rem;
+    color: #b30000;
+    margin-bottom: 12px;
+}
+
+.header-with-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.udm-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.header-with-logo .title {
+    text-align: left;
+    margin-bottom: 0;
+    font-size: 1.4rem;
+}
+
+/* studentdata */
+.student-data-display {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 10px;
+}
+
+.full-width-line {
+    display: flex;
+    align-items: baseline;
+}
+
+.student-data-display .info-input {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    padding: 3px 0;
+    border-bottom: 1px solid #cfcfcf;
+    font-size: 0.9rem;
+    font-style: italic;
+    outline: none;
+}
+
+.student-data-display label {
+    font-size: 0.9rem;
+    color: black;
+    padding-right: 8px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.highlight-field {
+    font-weight: bold;
+    font-style: italic;
+    color: #747373;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+/* inputs */
+label {
+    font-size: 0.9rem;
+    padding-right: 8px;
+}
+
+.editable-input,
+.tag-input,
+select,
+input[type="date"] {
+    flex-grow: 1;
+    padding: 6px 0;
+    margin-top: 5px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    border-bottom: 1px solid #cfcfcf;
+    outline: none;
+}
+
+.section-label-spacer {
+    margin-top: 25px;
+    display: block;
+}
+
+.editable-input:focus,
+.tag-input:focus,
+select:focus,
+input[type="date"]:focus,
+.student-data-display .info-input:focus {
+    border-bottom: 2px solid #555;
+}
+
+/* formrows */
+.form-row {
+    display: flex;
+    align-items: baseline;
+    margin-top: 15px;
+}
+
+.editable-textarea {
+    width: 100%;
+    height: 120px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #cfcfcf;
+    resize: none;
+}
+
+/* grid */
+.two-col-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 40px;
+}
+
+.top-gap {
+    margin-top: 20px;
+}
+
+/* tags */
+.tag-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 5px 0;
+}
+
+.tag {
+    padding: 5px 10px;
+    background: #def0d9;
+    border-radius: 6px;
+}
+
+.remove-tag {
+    cursor: pointer;
+}
+
+/* btns */
+.add-btn {
+    padding: 6px 12px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #3e9143;
+}
+
+.allergy-input-row {
+    display: flex;
+    gap: 8px;
+}
+
+.exit-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 30px;
+    background: #b3342b;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.exit-btn:hover {
+    background: #992a23;
+}
+
+/* responsive */
+@media (max-width: 700px) {
+    .two-col-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* misc */
+.required-asterisk {
+    color: red !important;
+    margin-left: 4px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1;
+}

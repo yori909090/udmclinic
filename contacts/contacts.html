@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universidad De Manila Clinic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contacts.css">
+    <link rel="stylesheet" href="../main/main.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="../images/udm.jpeg" alt="UDM Logo">
+                    <h1>Universidad De Manila Clinic</h1>
+                </div>
+
+                <div class="hamburger-menu" id="hamburgerBtn" aria-label="Open navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+
+            <div id="navDropdown" class="nav-dropdown" aria-hidden="true">
+                <div class="nav-dropdown-inner">
+                    <ul>
+                        <li><a href="../index.html">Homepage</a></li>
+                        <li><a href="../about/about.html">About Us</a></li>
+                        <li><a href="../appointment/appointment.html">Appointments</a></li>
+                        <li><a href="../anc/anc.html">Announcements</a></li>
+                        <li><a href="contacts.html">Contact Us</a></li>
+                        <li><a href="../login/login.html">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="chat-section">
+            <h2>CHAT TO OUR TEAM</h2>
+            <p>Need help with something? Get in touch with our team.</p>
+
+            <form id="contact-form">
+                <div class="name-inputs">
+                    <input type="text" id="first-name" name="firstName" placeholder="First name" required>
+                    <input type="text" id="last-name" name="lastName" placeholder="Last name" required>
+                </div>
+
+                <textarea id="message" name="message" placeholder="Message" rows="6" required></textarea>
+
+                <button type="submit" class="btn">GET IN TOUCH</button>
+            </form>
+        </section>
+
+        <section class="contact-info-section">
+            <div class="contact-header">
+                <span class="search-icon">🔍</span>
+                <h3>CONTACT INFORMATION</h3>
+                <button id="close-info" aria-label="Close contact info">×</button>
+            </div>
+
+            <div class="contact-details">
+                <p><span class="icon phone-icon">📞</span><strong> Phone Number:</strong> 253365362</p>
+                <p><span class="icon email-icon">📧</span><strong> Email:</strong> udmclinic@yahoo.com</p>
+                <p><span class="icon address-icon">📍</span><strong> Address:</strong> Manila, Philippines, 1000</p>
+            </div>
+
+            <div class="faq-section">
+                <h4>FREQUENTLY <span class="highlight">ASK QUESTIONS</span></h4>
+                <ol>
+                    <li>
+                        <span class="question">What are the clinic hours?</span>
+                        <ul>
+                            <li>Open Monday-Friday, 07:00 AM – 04:00 PM.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="question">What ID do I need to bring?</span>
+                        <ul>
+                            <li>Please bring your Student ID.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </main>
+    <script src="../main/main.js"></script>
+    <script src="contacts.js"></script>
+</body>
+
+</html>

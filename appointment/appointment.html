@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Universidad De Manila Clinic — Appointment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="appointment.css">
+    <script src="../main/main.js" defer></script>
+    <script src="appointment.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="../images/udm.jpeg" alt="UDM Logo">
+                    <h1>Universidad De Manila Clinic</h1>
+                </div>
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+
+            <div id="navDropdown" class="nav-dropdown" aria-hidden="true">
+                <div class="nav-dropdown-inner">
+                    <ul>
+                        <li><a href="../index.html">Homepage</a></li>
+                        <li><a href="../about/about.html">About Us</a></li>
+                        <li><a href="appointment.html">Appointments</a></li>
+                        <li><a href="../anc/anc.html">Announcements</a></li>
+                        <li><a href="../contacts/contacts.html">Contact Us</a></li>
+                        <li><a href="../login/login.html" id="loginNav">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-appointment">
+        <div class="inner-content-wrapper">
+
+            <div class="left-cta-section">
+                <center>
+                    <div class="cta">
+                        <span>BOOK NOW!</span>
+                    </div>
+                    <h2>Make an Appointment</h2>
+                    <p class="lead">We are here to support you on your path to a healthier life. How about we find a
+                        time that works perfectly for your schedule?</p>
+                </center>
+            </div>
+
+            <aside class="right-form-section" aria-label="appointment form">
+                <div class="brand"> </div>
+
+                <form id="apptForm" onsubmit="return false;">
+
+                    <div class="form-row">
+                        <label for="fullname">Fullname</label>
+                        <input id="fullname" type="text" placeholder="Enter your Fullname" required />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="studentid">Student Number</label>
+                        <input id="studentid" type="text" placeholder="Enter Your Student ID number" />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contact">Email or Phone Number</label>
+                        <input id="contact" type="text" placeholder="Enter Your Email Address or Phone no." />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="schedule">Available Schedules</label>
+                        <div style="display:flex;align-items:center">
+                            <input id="schedule" class="select-like" readonly value="Available Schedules" />
+                            <button type="button" class="calendar-btn" title="Open calendar" onclick="openCalendar()">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                                    <rect x="3" y="5" width="18" height="16" rx="2" stroke="#0b6b4f"
+                                        stroke-width="1.6" />
+                                    <path d="M16 3v4M8 3v4" stroke="#0b6b4f" stroke-width="1.6"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+                        <button onclick="submitForm()" id="confirm-btn"
+                            style="flex:1;padding:12px 16px;border-radius:10px;border:none;background:linear-gradient(180deg,#13a76b,#0d704f);color:white;font-weight:700;cursor:pointer">Confirm</button>
+                        <button type="reset"
+                            style="padding:10px 14px;border-radius:10px;border:1px solid rgba(126, 123, 123, 0.644);background:linear-gradient(180deg,#13a76b,#0d704f);color:white;font-weight:700;cursor:pointer">Reset</button>
+                    </div>
+
+                    <p class="help">We'll send a confirmation to the email or phone number you provide.</p>
+                </form>
+            </aside>
+
+        </div>
+    </main>
+
+    <div id="statusModal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:3000; justify-content:center; align-items:center;">
+        <div style="background:white; padding:20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.3);">
+            <p id="modalMessage"></p>
+            <button class="close-btn" style="margin-top:15px;">Close</button>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
